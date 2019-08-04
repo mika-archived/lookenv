@@ -1,0 +1,24 @@
+{
+  "name": "@mikazuki/lookenv",
+  "version": "0.1.0",
+  "description": "Lookup values from environment variables and cloud secure variables",
+  "main": "dist/index.min.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/mika-f/lookenv.git",
+  "homepage": "https://github.com/mika-f/lookenv",
+  "author": {
+    "name": "Fuyuno Mikazuki",
+    "email": "mikazuki_fuyuno@outlook.com",
+    "url": "https://mochizuki.dev"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prebuild": "rm -r ./dist",
+    "build": "bili",
+    "prepublishOnly": "yarn run build"
+  }
+}
