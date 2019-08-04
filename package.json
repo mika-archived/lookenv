@@ -1,8 +1,9 @@
 {
   "name": "@mikazuki/lookenv",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "Lookup values from environment variables and cloud secure variables",
-  "main": "dist/index.min.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -17,11 +18,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "prebuild": "rm -r ./dist",
+    "prebuild": "rm -rf ./dist",
     "build": "bili",
     "prepublishOnly": "yarn run build"
   },
+  "_1": "the following two dependencies (@azure/*) are optional, but peerDependencies will give a warnings, optionalDependencies will install them.",
   "devDependencies": {
+    "@azure/identity": "^1.0.0-preview.1",
+    "@azure/keyvault-secrets": "^4.0.0-preview.2",
     "@types/node": "^12.6.9",
     "bili": "^4.8.1",
     "eslint": "^6.1.0",
@@ -33,9 +37,5 @@
     "rollup-plugin-typescript2": "^0.22.1",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3"
-  },
-  "peerDependencies": {
-    "@azure/identity": "^1.0.0-preview.1",
-    "@azure/keyvault-secrets": "^4.0.0-preview.2"
   }
 }
