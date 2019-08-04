@@ -1,5 +1,4 @@
-import { SecretsClient } from "@azure/keyvault-secrets";
-
+import { AsyncLazy } from "../asynclazy";
 import { IIdentity } from "./interface";
 
 // This is a interface of @azure/identity credentials
@@ -8,14 +7,14 @@ interface TokenCredential {
 }
 
 export class AzureIdentity implements IIdentity {
-  private readonly _client: SecretsClient;
+  private readonly _client: AsyncLazy<import("@azure/keyvault-secrets").SecretsClient>;
 
   public constructor(vault: string, credential: TokenCredential) {
-    this._client = new SecretsClient(`https://${vault}.vault.azure.net`, credential);
+    this._client = new AsyncLazy(async () => await import("@azure/keyvault-secrets").then(w => new w.SecretsClient(`https://${vault}.vault.azure.net`, credential)));
   }
 
   public async get(name: string, options?: any): Promise<string | undefined> {
-    const secret = await this._client.getSecret(this.pascalize(name), options);
+    const secret = await (await this._client.value).getSecret(this.pascalize(name), options);
     return secret.value;
   }
 
