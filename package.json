@@ -20,5 +20,22 @@
     "prebuild": "rm -r ./dist",
     "build": "bili",
     "prepublishOnly": "yarn run build"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.9",
+    "bili": "^4.8.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "@azure/identity": "^1.0.0-preview.1",
+    "@azure/keyvault-secrets": "^4.0.0-preview.2"
   }
 }
