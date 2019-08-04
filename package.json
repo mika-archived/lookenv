@@ -1,6 +1,6 @@
 {
   "name": "@mikazuki/lookenv",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Lookup values from environment variables and cloud secure variables",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
