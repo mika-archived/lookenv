@@ -1,4 +1,4 @@
-import { AsyncLazy } from "../asynclazy";
+import { AsyncLazy } from "@mikazuki/lazy-class";
 import { IIdentity } from "./interface";
 
 // This is a interface of @azure/identity credentials
@@ -14,7 +14,7 @@ export class AzureIdentity implements IIdentity {
   }
 
   public async get(name: string, options?: any): Promise<string | undefined> {
-    const secret = await (await this._client.value).getSecret(this.pascalize(name), options);
+    const secret = await (await this._client.value!).getSecret(this.pascalize(name), options);
     return secret.value;
   }
 
