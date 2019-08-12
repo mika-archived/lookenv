@@ -1,5 +1,5 @@
 import { AzureIdentity, LocalIdentity } from "./identities";
-import { LookEnv } from "./lookenv";
+import LookEnv from "./lookenv";
 
 export { AzureIdentity, LocalIdentity };
 
