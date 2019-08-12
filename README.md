@@ -37,6 +37,17 @@ await env.has("NODE_ENV");         // => compile ok
 await env.has("NODE_ENVIRONMENT"); // => compile failure
 ```
 
+### Custom Variable
+
+```typescript
+import LookEnv, { LocalIdentity } from "@mikazuki/lookenv";
+
+const local = new LocalIdentity({ LOCAL_VALUE: "xxx" });
+const env = new LookEnv(local);
+
+await env.has("LOCAL_VALUE"); // => true
+```
+
 ### Azure Key Vault
 
 LookEnv supports Azure Key Vault as Key Store.  
