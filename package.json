@@ -20,21 +20,29 @@
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "bili",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "test": "jest",
+    "lint": "eslint {src,__tests__}/**/*.ts"
   },
   "_1": "the following two dependencies (@azure/*) are optional, but peerDependencies will give a warnings, optionalDependencies will install them.",
   "devDependencies": {
     "@azure/identity": "^1.0.0-preview.1",
     "@azure/keyvault-secrets": "^4.0.0-preview.2",
+    "@types/jest": "^24.0.17",
     "@types/node": "^12.6.9",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "bili": "^4.8.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "rollup-plugin-typescript2": "^0.22.1",
+    "ts-jest": "^24.0.2",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3"
   },
